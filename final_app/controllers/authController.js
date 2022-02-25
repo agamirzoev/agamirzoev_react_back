@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { Users } = require('../models');
 
-const secret = process.env.accessTokenSecret;
+const secret = process.env.ACCESS_TOKEN_SECRET;
 
 module.exports = {
   async registration(req, res) {
