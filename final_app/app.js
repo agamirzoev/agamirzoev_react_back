@@ -5,9 +5,9 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const loginRouter = require('./routes/login');
 const newsRouter = require('./routes/news');
-const authRouter = require('./routes/auth');
+const regRouter = require('./routes/registration');
 
 const app = express();
 
@@ -19,8 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/auth/registration', regRouter);
+app.use('/auth/login', loginRouter);
 app.use('/news', newsRouter);
-app.use('/auth', authRouter);
 
 module.exports = app;
