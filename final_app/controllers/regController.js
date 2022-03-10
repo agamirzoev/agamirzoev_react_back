@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const { Users } = require('../models');
-// const bcrypt = require('bcrypt');
 
 const secret = process.env.ACCESS_TOKEN_SECRET;
 
@@ -23,7 +22,6 @@ module.exports = {
       });
       const payload = { id: user.id };
       const token = jwt.sign(payload, secret);
-      // person.password = token;
       return res.status(200).json({ message: 'Registration was successful!', token });
     } catch (e) {
       return res.status(500).json(e);
