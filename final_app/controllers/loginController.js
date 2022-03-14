@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const { Users } = require('../models');
 
 const secret = process.env.ACCESS_TOKEN_SECRET;
@@ -11,7 +12,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({ message: 'User not found!' });
       }
-      const isPasswordValid = user.password === password;
+      const isPasswordValid = bcrypt.compareSync(password, user.password);
 
       if (!isPasswordValid) {
         return res.status(401).json({ message: 'Incorrect password!' });
