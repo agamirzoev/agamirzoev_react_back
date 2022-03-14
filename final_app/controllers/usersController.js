@@ -20,7 +20,7 @@ module.exports = {
 
   getProfile(req, res) {
     const { authorization } = req.headers;
-    const isVerify = jwt.verify(authorization, process.env.accessTokenSecret);
+    const isVerify = jwt.verify(authorization, process.env.ACCESS_TOKEN_SECRET);
     return Users.findOne({
       where: { id: isVerify.id },
       include: [{ model: News, as: 'news' }],

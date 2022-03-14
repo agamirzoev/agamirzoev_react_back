@@ -17,7 +17,7 @@ module.exports = {
   },
   createNews(req, res) {
     const { authorization } = req.headers;
-    const isVerify = jwt.verify(authorization, process.env.accessTokenSecret);
+    const isVerify = jwt.verify(authorization, process.env.ACCESS_TOKEN_SECRET);
     if (isVerify) {
       const { header, content, tag } = req.body;
       const { picture } = req.files;
