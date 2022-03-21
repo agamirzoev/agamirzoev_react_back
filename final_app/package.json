@@ -2,6 +2,7 @@
   "name": "final-app",
   "version": "0.0.0",
   "private": true,
+  "homepage": "localhost",
   "scripts": {
     "start": "nodemon ./bin/www"
   },
