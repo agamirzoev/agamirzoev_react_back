@@ -18,8 +18,9 @@ module.exports = {
         return res.status(401).json({ message: 'Incorrect password!' });
       }
       const payload = { id: user.id };
+      const { id } = user;
       const token = jwt.sign(payload, secret);
-      return res.json({ message: 'Authorization was successful!', token });
+      return res.json({ message: 'Authorization was successful!', token, id });
     } catch (e) {
       return res.status(500).json({ e });
     }

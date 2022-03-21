@@ -27,7 +27,6 @@ module.exports = {
       });
       const payload = { id: user.id, email };
       const token = jwt.sign(payload, secret);
-      console.log(token);
       return res.status(200).json({ message: 'Registration was successful!', token: `${token}` });
     } catch (e) {
       return res.status(500).json(e);
