@@ -106,3 +106,4 @@ dist
 .history/
 package-lock.json
 .env
+.DS_Store

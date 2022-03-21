@@ -32,11 +32,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 app.use('/auth/registration', regRouter);
 app.use('/auth/login', loginRouter);
 app.use('/news', newsRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
