@@ -1,6 +1,4 @@
-/* eslint-disable arrow-body-style */
 /* eslint-disable no-param-reassign */
-/* eslint-disable object-shorthand */
 const jwt = require('jsonwebtoken');
 const uuid = require('uuid');
 const path = require('path');
@@ -31,7 +29,6 @@ module.exports = {
     })
       .then((user) => {
         delete user.dataValues.password;
-        console.log(user);
         return res.status(200).send(user);
       })
       .catch((e) => res.status(500).send(e));

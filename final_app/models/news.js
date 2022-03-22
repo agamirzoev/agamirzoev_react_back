@@ -5,16 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     picture: DataTypes.STRING,
     tags: DataTypes.STRING,
     user_id: DataTypes.INTEGER,
-    /* user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'users',
-        key: 'id',
-      },
-    }, */
   }, {});
   News.associate = function (models) {
-    // associations can be defined here
     News.belongsTo(models.Users, { foreignKey: 'user_id', as: 'user' });
   };
   return News;
